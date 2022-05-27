@@ -45,10 +45,15 @@ function main(){
     let cardapio = ``;
     let prinCol1 = ``;
     let prinCol2 = ``;
+    let limitador = 1;
     pizzas.forEach(element => {
-      cardapio += criarCardapio(element);
-      prinCol1 += principais(element);
-      prinCol2 += principais(element);
+      if(limitador <= 6){
+        cardapio += criarCardapio(element);
+        prinCol1 += principais(element);
+        prinCol2 += principais(element);
+      }
+      limitador++;
+      
     });
 
     document.getElementById("cardapioPizzas").innerHTML = cardapio;
